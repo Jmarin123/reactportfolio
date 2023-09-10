@@ -1,15 +1,20 @@
 "use client"
 import React, { useState } from 'react';
-
+import Switcher from './Switcher';
 export default function Navbar() {
-    const [isOpen, setMenuOpen] = useState(false);
+    const [isOpen, setMenuOpen] = useState(true);
 
     const toggleNavbar = () => {
         setMenuOpen(!isOpen);
     };
 
     return (
-        <nav className="bg-light-primary p-4 w-full flex items-center">
+        <nav className="bg-light-primary p-4 h-full w-full flex justify-between items-center dark:bg-light-primary">
+            <div className='text-light-text text-xl dark:text-dark-text'>Jason Osorio Marin</div>
+            <div className='flex space-x-4'>
+                <div className="text-light-text dark:text-dark-text">About Me</div>
+                <Switcher />
+            </div>
         </nav>
     );
 }
