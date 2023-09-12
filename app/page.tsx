@@ -8,7 +8,7 @@ export default function Home() {
     // Simulate an asynchronous operation (e.g., data fetching)
     setTimeout(() => {
       setIsLoading(false); // Set isLoading to false when the data is loaded
-    }, 2000); // Simulating a 2-second loading time
+    }, 500); // Simulating a 2-second loading time
   }, []);
   return (
     <>

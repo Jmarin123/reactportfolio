@@ -7,9 +7,6 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    // fontFamily: {
-
-    // }
     extend: {
       colors: {
         dark: {

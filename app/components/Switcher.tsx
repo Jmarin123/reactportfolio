@@ -17,12 +17,12 @@ export default function Switcher() {
     };
 
     return (
-        <>
+        <div className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700' onClick={() => { toggleDarkMode(darkSide) }}>
             <DarkModeSwitch
                 checked={darkSide}
                 onChange={toggleDarkMode}
-                size={25}
+                size={20}
             />
-        </>
+        </div>
     );
 }
