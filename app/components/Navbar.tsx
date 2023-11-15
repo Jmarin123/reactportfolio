@@ -9,7 +9,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="p-4 h-full w-full flex justify-between items-center">
+        <nav className="p-4 h-full w-full flex justify-between items-center px-6">
             <div className='text-light-text text-2xl dark:text-dark-text'>Jason Osorio Marin</div>
             <div className='flex space-x-4 items-center'>
                 <Switcher />

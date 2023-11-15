@@ -7,6 +7,7 @@ export default function Switcher() {
     const [darkSide, setDarkSide] = useState(
         colorTheme === "light" ? true : false
     );
+
     useEffect(() => {
         // Set darkSide based on colorTheme when colorTheme changes
         setDarkSide(colorTheme === "light" ? true : false);
