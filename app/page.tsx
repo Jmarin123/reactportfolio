@@ -1,8 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar"
 import LoadingScreen from "./LoadingScreen";
-import MainPage from "./components/MainPage";
+import PageContainer from "./components/PageContainer"
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -16,10 +15,7 @@ export default function Home() {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <>
-          <Navbar />
-          <MainPage />
-        </>
+        <PageContainer />
       )}
     </>
   )

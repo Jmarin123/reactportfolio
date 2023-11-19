@@ -9,20 +9,21 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="p-4 h-full w-full flex justify-between items-center px-6">
+        <nav className="p-4 h-full w-full flex justify-between items-center px-4">
             <div className='text-light-text text-2xl dark:text-dark-text'>Jason Osorio Marin</div>
-            <div className='flex space-x-4 items-center'>
+            <div className='flex space-x-3 items-center'>
                 <Switcher />
                 <div className="md:hidden text-white flex items-center">
-                    <button
+                    <button className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700'
                         onClick={toggleNavbar}
+
                     >
                         <div
                             className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text transition-transform transform ${isOpen ? 'rotate-45 translate-y-2' : ''
                                 }`}
                         ></div>
                         <div
-                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-opacity ${isOpen ? 'opacity-0' : ''
+                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-opacity ${isOpen ? 'translate-x-6 opacity-0 transition-[opacity,transform]' : 'translate-x-0 opacity-100 transition-[opacity,transform]'
                                 }`}
                         ></div>
                         <div

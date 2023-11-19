@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function useDarkMode() {
     const false_flag = useRef(false)
-    const [theme, setTheme] = useState<string>('light'); // Set a default theme
+    const [theme, setTheme] = useState<string>('dark'); // Set a default theme
     const colorTheme = theme === "dark" ? "light" : "dark";
 
     useEffect(() => {
