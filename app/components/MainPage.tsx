@@ -1,6 +1,6 @@
-export default function MainPage() {
-    return (<>
-        <div className="h-screen bg-red-500"></div>
-        <div className="h-screen bg-blue-500"></div>
-    </>)
+import IntroPage from "./IntroPage"
+export default function MainPage({ globalTheme }: { globalTheme: string }) {
+    return (<main>
+        <IntroPage globalTheme={globalTheme} />
+    </main>)
 }

@@ -1,8 +1,10 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import useDarkMode from "../hooks/useDarkMode";
-
-export default function Switcher() {
+interface SwitcherProps {
+    setGlobalTheme: Dispatch<SetStateAction<string>>;
+}
+const Switcher: React.FC<SwitcherProps> = ({ setGlobalTheme }) => {
     const [colorTheme, setTheme] = useDarkMode();
     const [darkSide, setDarkSide] = useState(
         colorTheme === "light" ? true : false
@@ -11,7 +13,8 @@ export default function Switcher() {
     useEffect(() => {
         // Set darkSide based on colorTheme when colorTheme changes
         setDarkSide(colorTheme === "light" ? true : false);
-    }, [colorTheme]);
+        setGlobalTheme(colorTheme === "light" ? 'dark' : 'light')
+    }, [colorTheme, setGlobalTheme]);
     const toggleDarkMode = (checked: boolean) => {
         (setTheme as Dispatch<SetStateAction<string>>)(colorTheme as string);
         setDarkSide(checked);
@@ -27,3 +30,5 @@ export default function Switcher() {
         </div>
     );
 }
+
+export default Switcher

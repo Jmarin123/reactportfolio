@@ -4,8 +4,9 @@ import MainPage from "./MainPage";
 import { useEffect, useState } from "react";
 
 export default function PageContainer() {
-    const [fadeIn, setFadeIn] = useState(false);
-    const [removeBlackScreen, setRemoveBlackScreen] = useState(false);
+    const [fadeIn, setFadeIn] = useState<boolean>(false);
+    const [removeBlackScreen, setRemoveBlackScreen] = useState<boolean>(false);
+    const [globalTheme, setGlobalTheme] = useState<string>('dark');
     useEffect(() => {
         setTimeout(() => {
             setFadeIn(true);
@@ -23,10 +24,8 @@ export default function PageContainer() {
                     }`}
                 onTransitionEnd={handleTransitionEnd}
             />
-            <div>
-                <Navbar />
-                <MainPage />
-            </div>
+            <Navbar setGlobalTheme={setGlobalTheme} />
+            <MainPage globalTheme={globalTheme} />
         </>
     );
 }
