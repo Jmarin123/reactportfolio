@@ -12,7 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     };
 
     return (
-        <nav className="p-4 h-full w-full flex justify-between items-center px-4">
+        <nav className="p-4 w-full flex justify-between absolute top-0 left-0 items-center z-10">
             <div className='text-light-text text-2xl dark:text-dark-text'>Jason Osorio Marin</div>
             <div className='flex space-x-3 items-center'>
                 <Switcher setGlobalTheme={setGlobalTheme} />
@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                                 }`}
                         ></div>
                         <div
-                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-opacity ${isOpen ? 'translate-x-6 opacity-0 transition-[opacity,transform]' : 'translate-x-0 opacity-100 transition-[opacity,transform]'
+                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-opacity ${isOpen ? 'translate-x-6 opacity-0 transition-[opacity,transform] duration-300' : 'opacity-100 transition-[opacity,transform] duration-300'
                                 }`}
                         ></div>
                         <div
