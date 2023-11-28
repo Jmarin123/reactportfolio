@@ -1,18 +1,33 @@
 "use client"
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Switcher from './Switcher';
 interface NavbarProps {
     setGlobalTheme: Dispatch<SetStateAction<string>>;
 }
 const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     const [isOpen, setMenuOpen] = useState(false);
-
+    const [isSticky, setIsSticky] = useState(false);
     const toggleNavbar = () => {
         setMenuOpen(!isOpen);
     };
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+
+            // Adjust the threshold value according to your layout
+            setIsSticky(offset > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
-        <nav className="p-4 w-full flex justify-between absolute top-0 left-0 items-center z-10">
+        <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed ${isSticky ? "dark:bg-dark-background bg-light-background" : ""}`}>
             <div className='text-light-text text-2xl dark:text-dark-text'>Jason Osorio Marin</div>
             <div className='flex space-x-3 items-center'>
                 <Switcher setGlobalTheme={setGlobalTheme} />
