@@ -1,42 +1,54 @@
+import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 export default function TypingIntro() {
+    let [secondLine, setSecondLine] = useState(false);
+    let [thirdLine, setThirdLine] = useState(false);
+    let secondLineCallback = (el: HTMLElement | null) => {
+        el?.classList.remove("custom-type-animation-cursor");
+        setSecondLine(true)
+    }
+
+    let thirdCallBack = (el: HTMLElement | null) => {
+        el?.classList.remove("custom-type-animation-cursor");
+        setThirdLine(true)
+    }
+
     return (
         <div className="h-screen">
             <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col text-center">
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
-                {/* Todo: Fix the animation using a callback */}
                 <TypeAnimation
                     cursor={false}
                     sequence={[
                         '',
                         900,
                         'Hi! I am Jason Osorio Marin',
-                        (el) => el!.classList.remove("custom-type-animation-cursor")
+                        secondLineCallback
                     ]}
                     speed={20}
-                    className="text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold"
+                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default"
                     repeat={0}
                 />
-                <TypeAnimation
+                {secondLine ? <TypeAnimation
                     cursor={false}
                     sequence={[
                         '',
-                        3500,
+                        400,
                         (el) => el?.classList.add("custom-type-animation-cursor"),
                         'I am a',
-                        (el) => el?.classList.remove("custom-type-animation-cursor")
+                        thirdCallBack
                     ]}
                     speed={20}
-                    className="text-4xl dark:text-dark-text text-light-text text-center font-bold"
+                    className="text-3xl md:text-4xl dark:text-dark-text text-light-text text-center font-bold select-none cursor-default"
                     repeat={0}
-                />
-                <TypeAnimation
+                /> : ''}
+                {thirdLine ? <TypeAnimation
                     cursor={false}
                     sequence={[
                         '',
-                        4300,
+                        500,
                         (el) => el?.classList.add("custom-type-animation-cursor"),
                         'Front End',
                         600,
@@ -46,9 +58,9 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className="text-6xl dark:text-dark-accent text-light-primary text-center font-bold"
+                    className="text-4xl md:text-6xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-defaultx"
                     repeat={0}
-                />
+                /> : ''}
 
                 <style global jsx>{`
             .custom-type-animation-cursor::after {

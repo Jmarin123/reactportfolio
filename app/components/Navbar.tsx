@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
             const offset = window.scrollY;
 
             // Adjust the threshold value according to your layout
-            setIsSticky(offset > 50);
+            setIsSticky(offset > 0);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -27,8 +27,8 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     }, []);
 
     return (
-        <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed ${isSticky ? "dark:bg-dark-background bg-light-background" : ""}`}>
-            <div className='text-light-text text-2xl dark:text-dark-text'>Jason Osorio Marin</div>
+        <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-background bg-licght-background" : ""}`}>
+            <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left'>Jason Osorio Marin</div>
             <div className='flex space-x-3 items-center'>
                 <Switcher setGlobalTheme={setGlobalTheme} />
                 <div className="md:hidden text-white flex items-center">
@@ -37,15 +37,15 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
 
                     >
                         <div
-                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text transition-transform transform ${isOpen ? 'rotate-45 translate-y-2' : ''
+                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''
                                 }`}
                         ></div>
                         <div
-                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-opacity ${isOpen ? 'translate-x-6 opacity-0 transition-[opacity,transform] duration-300' : 'opacity-100 transition-[opacity,transform] duration-300'
+                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-[opacity, transform] ${isOpen ? 'translate-x-6 opacity-0 duration-300' : 'opacity-100 duration-300'
                                 }`}
                         ></div>
                         <div
-                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-transform transform ${isOpen ? '-rotate-45 -translate-y-2' : ''
+                            className={`w-5 h-1 rounded-md dark:bg-dark-text bg-light-text mt-1 transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''
                                 }`}
                         ></div>
                     </button>
