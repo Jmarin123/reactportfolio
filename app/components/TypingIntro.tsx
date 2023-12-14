@@ -24,7 +24,7 @@ export default function TypingIntro() {
                     sequence={[
                         '',
                         900,
-                        'Hi! I am Jason Osorio Marin',
+                        'Hello! I am Jason Osorio Marin',
                         secondLineCallback
                     ]}
                     speed={20}

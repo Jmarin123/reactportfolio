@@ -13,7 +13,6 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
-
             // Adjust the threshold value according to your layout
             setIsSticky(offset > 0);
         };
@@ -25,9 +24,10 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
+    //TODO: MAKE A MODEL TO POP UP WHEN OPENING MENUE
     return (
-        <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-background bg-licght-background" : ""}`}>
+        <>
+        <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-primary bg-light-secondary" : ""}`}>
             <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left'>Jason Osorio Marin</div>
             <div className='flex space-x-3 items-center'>
                 <Switcher setGlobalTheme={setGlobalTheme} />
@@ -58,6 +58,16 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                 transition max-md:hidden">Contact Me</a>
             </div>
         </nav>
+        {isOpen && (
+        <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-primary z-[9] flex items-center justify-center transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className="p-8 flex flex-col">
+                <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">About Me</a>
+                <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Projects</a>
+                <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Contact Me</a>
+            </div>
+            </div>
+        )}
+        </>
     );
 };
 
