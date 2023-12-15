@@ -27,11 +27,11 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     //TODO: MAKE A MODEL TO POP UP WHEN OPENING MENUE
     return (
         <>
-            <nav className={`p-4 w-full flex justify-between items-center z-10 top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-primary bg-light-secondary" : ""}`}>
-                <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left'>Jason Osorio Marin</div>
+            <nav className={`p-4 w-full flex justify-between items-center top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-primary bg-light-secondary" : ""}`}> {/* First Z */}
+                <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left z-20'>Jason Osorio Marin</div>
                 <div className='flex space-x-3 items-center z-20'>
                     <Switcher setGlobalTheme={setGlobalTheme} />
-                    <div className="md:hidden text-white flex items-center">
+                    <div className="md:hidden text-white flex items-center"> {/* Second Z */}
                         <button className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700'
                             onClick={toggleNavbar}
 
@@ -57,15 +57,15 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                     <a className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">Contact Me</a>
                 </div>
-            </nav>
-            <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-secondary z-[11] transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full delay-150'}`}></div>
-            <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-primary z-[11] flex items-center justify-center transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0 delay-150' : 'translate-x-full'}`}>
-                <div className="p-8 flex flex-col">
-                    <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">About Me</a>
-                    <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Projects</a>
-                    <a className="text-light-text dark:text-dark-text text-4xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Contact Me</a>
-                </div>
+                <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-primary dark:bg-dark-secondary transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full delay-150'}`}></div>
+                <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-secondary dark:bg-dark-primary flex items-center justify-center transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0 delay-150' : 'translate-x-full'}`}>
+                    <div className="p-8 flex flex-col text-center">
+                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">About Me</a>
+                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Projects</a>
+                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Contact Me</a>
+                    </div>
             </div>
+            </nav>
 
         </>
     );
