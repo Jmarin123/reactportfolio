@@ -29,7 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
         <>
             <nav className={`p-4 w-full flex justify-between items-center top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-primary bg-light-secondary" : ""}`}> {/* First Z */}
                 <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left z-20'>Jason Osorio Marin</div>
+
                 <div className='flex space-x-3 items-center z-20'>
+                    <button className="bg-transparent hover:bg-light-primary text-light-text dark:text-dark-text font-semibold dark:hover:text-white hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Button
+                    </button>
                     <Switcher setGlobalTheme={setGlobalTheme} />
                     <div className="md:hidden text-white flex items-center"> {/* Second Z */}
                         <button className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700'
@@ -64,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                         <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Projects</a>
                         <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Contact Me</a>
                     </div>
-            </div>
+                </div>
             </nav>
 
         </>
