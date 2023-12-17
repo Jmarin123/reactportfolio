@@ -13,26 +13,21 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
-            // Adjust the threshold value according to your layout
             setIsSticky(offset > 0);
         };
 
         window.addEventListener("scroll", handleScroll);
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-    //TODO: MAKE A MODEL TO POP UP WHEN OPENING MENUE
     return (
         <>
             <nav className={`p-4 w-full flex justify-between items-center top-0 left-0 fixed transition-colors duration-300 ease-in-out ${isSticky ? "dark:bg-dark-primary bg-light-secondary" : ""}`}> {/* First Z */}
-                <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-left z-20'>Jason Osorio Marin</div>
-
+                <div className='text-light-text dark:text-dark-text text-xl md:text-2xl text-center z-20'>Jason Osorio Marin</div>
                 <div className='flex space-x-3 items-center z-20'>
-                    <button className="bg-transparent hover:bg-light-primary text-light-text dark:text-dark-text font-semibold dark:hover:text-white hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                        Button
+                    <button className="bg-transparent hover:bg-light-primary dark:hover:bg-light-secondary  text-light-text dark:text-dark-text font-semibold dark:hover:text-light-text hover:text-white py-2 px-4 border border-light-primary dark:border-light-secondary dark:hover:border-transparent hover:border-transparent rounded max-md:hidden">
+                        Resume
                     </button>
                     <Switcher setGlobalTheme={setGlobalTheme} />
                     <div className="md:hidden text-white flex items-center"> {/* Second Z */}
@@ -64,9 +59,11 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                 <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-primary dark:bg-dark-secondary transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full delay-150'}`}></div>
                 <div className={`md:hidden fixed top-0 right-0 h-full w-full bg-light-secondary dark:bg-dark-primary flex items-center justify-center transform transition-transform ease-in-out duration-300 ${isOpen ? 'translate-x-0 delay-150' : 'translate-x-full'}`}>
                     <div className="p-8 flex flex-col text-center">
-                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">About Me</a>
-                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Projects</a>
-                        <a className="text-light-text dark:text-dark-text text-8xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition">Contact Me</a>
+                        <a className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">About Me</a>
+                        <a className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Projects</a>
+                        <a className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Contact Me</a>
+                        <a className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Resume</a>
+        
                     </div>
                 </div>
             </nav>
