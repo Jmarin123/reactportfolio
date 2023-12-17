@@ -9,7 +9,7 @@ export default function ParticleBackground({ globalTheme }: { globalTheme: strin
     let themeColors = globalTheme == "dark" ? "#ffffff" : "#000000"
 
     return (
-        <section className="h-full w-full blur-[2px] brightness-50">
+        <section className="h-full w-full blur-[2px] brightness-50 -z-50">
             <Particles
                 className="h-full"
                 id="tsparticles"

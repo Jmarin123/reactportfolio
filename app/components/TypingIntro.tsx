@@ -15,8 +15,7 @@ export default function TypingIntro() {
     }
 
     return (
-        <div>
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col text-center">
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col text-center -z-50">
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
                 <TypeAnimation
@@ -74,6 +73,5 @@ export default function TypingIntro() {
             }
             `}</style>
             </div>
-        </div>
     )
 }
