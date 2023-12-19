@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { InView } from 'react-intersection-observer';
 import './VerticalTimelineElement.css'
+interface VTETypes {
+    children?: React.ReactNode;
+    className?: string;
+    contentArrowStyle?: React.CSSProperties;
+    contentStyle?: React.CSSProperties;
+    icon?: React.ReactElement;
+    iconClassName?: string;
+    iconOnClick?: (event:React.MouseEvent) => void;
 
-const VerticalTimelineElement = ({
+
+}
+const VerticalTimelineElement: React.FC<VTETypes> = ({
     children = '',
     className = '',
     contentArrowStyle = null,
