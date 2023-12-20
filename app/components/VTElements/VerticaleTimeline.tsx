@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './Verticaletimeline.css'
+import './VerticaleTimeline.css'
 interface VTTypes {
   animate?: Boolean,
   className?: string,
@@ -9,7 +8,7 @@ interface VTTypes {
   lineColor?: string,
   children: React.ReactNode | React.ReactNode[]
 }
-export const VerticalTimeline = ({animate = true, className = '', layout = '2-column', children, lineColor ='#FFF'}:VTTypes) => {
+export const VerticalTimeline = ({animate = true, className = '', layout = '2-columns', children, lineColor ='#FFF'}:VTTypes) => {
   if (typeof window === 'object') {
     document.documentElement.style.setProperty('--line-color', lineColor);
   }

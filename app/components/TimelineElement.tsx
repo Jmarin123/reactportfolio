@@ -1,7 +1,7 @@
-import VerticalTimelineElement from "./VTElements/VerticaleTimelineElement";
-import "react-vertical-timeline-component/style.min.css";
+import { VerticalTimelineElement } from "./VTElements/VerticaleTimelineElement";
 import { useInView } from "react-intersection-observer";
 import Tilt from 'react-parallax-tilt';
+import './VTElements/VerticaleTimelineElement.css'
 export default function TimelineElement() {
     const { ref, inView } = useInView({
         triggerOnce: false,
@@ -10,9 +10,7 @@ export default function TimelineElement() {
     return (
     <div ref={ref} className="vertical-timeline-element">
         <VerticalTimelineElement
-            contentStyle={}
             contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-            icon={""}
             iconStyle={{
             }}
             visible={inView}

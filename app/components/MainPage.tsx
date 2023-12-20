@@ -1,8 +1,8 @@
 import ParticleBackground from "./ParticleBackground"
 import TypingIntro from "./TypingIntro"
-import 'react-vertical-timeline-component/style.min.css';
 import TimelineElement from "./TimelineElement";
-import VerticalTimeline from "./VTElements/VerticaleTimeline";
+import { VerticalTimeline } from "./VTElements/VerticaleTimeline";
+
 export default function MainPage({ globalTheme }: { globalTheme: string }) {
     return (<main className="overflow-x-hidden">
         <section className="h-screen">
