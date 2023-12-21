@@ -36,7 +36,7 @@
     height: 40px;
     border-radius: 50%;
   }
-  .vertical-timeline-element-icon.shadow-size-small {
+  /* .vertical-timeline-element-icon.shadow-size-small {
     box-shadow: 0 0 0 2px white, inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 0 4px rgba(0, 0, 0, 0.05);
   }
   
@@ -46,7 +46,7 @@
   
   .vertical-timeline-element-icon.shadow-size-large {
     box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 4px 0 6px rgba(0, 0, 0, 0.05);
-  }
+  } */
   .vertical-timeline--one-column-right .vertical-timeline-element-icon {
     right: 0;
     left: unset;
@@ -151,7 +151,7 @@
     background: white;
     border-radius: 0.25em;
     padding: 1em;
-    box-shadow: 0 3px 0 #ddd;
+    /* box-shadow: 0 3px 0 #ddd; */
   }
   
   .vertical-timeline--one-column-right .vertical-timeline-element-content {
@@ -309,7 +309,7 @@
     animation: cd-bounce-2 0.6s;
   }
   
-  @media only screen and (min-width: 1170px) {
+  /* @media only screen and (min-width: 1170px) { */
     /* inverse bounce effect on even content blocks */
     .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content.bounce-in,
     .vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content.bounce-in {
@@ -317,16 +317,18 @@
       -moz-animation: cd-bounce-2-inverse 0.6s;
       animation: cd-bounce-2-inverse 0.6s;
     }
-  }
+  /* } */
   
-  @media only screen and (max-width: 1169px) {
+
+  /* !THIS IS WHRE THE BOUNCE HAPPENS */
+  /* @media only screen and (max-width: 1169px) {   
     .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
       visibility: visible;
       -webkit-animation: cd-bounce-2-inverse 0.6s;
       -moz-animation: cd-bounce-2-inverse 0.6s;
       animation: cd-bounce-2-inverse 0.6s;
     }
-  }
+  } */
   
   @-webkit-keyframes cd-bounce-2 {
     0% {

@@ -38,8 +38,8 @@ export const VerticalTimelineElement= ({
     style = {},
     textClassName = '',
     intersectionObserverProps = {
-    rootMargin: '0px 0px -40px 0px',
-    triggerOnce: true,
+    rootMargin: '0px 0px 0px 0px',
+    triggerOnce: false,
     },
     visible = false,
     }: VTETypes) => (
