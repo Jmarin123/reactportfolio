@@ -3,10 +3,10 @@ import TypingIntro from "./TypingIntro"
 import TimelineElement from "./TimelineElement";
 import { VerticalTimeline } from "./VTElements/VerticaleTimeline";
 
-export default function MainPage({ globalTheme }: { globalTheme: string }) {
+export default function MainPage() {
     return (<main className="overflow-x-hidden">
         <section className="h-screen">
-            <ParticleBackground globalTheme={globalTheme} />
+            <ParticleBackground/>
             <TypingIntro />
         </section>
         <section className="h-screen">

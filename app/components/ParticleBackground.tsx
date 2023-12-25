@@ -1,8 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import {pageTheme} from '../_app'
 import Particles from "react-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
-export default function ParticleBackground({ globalTheme }: { globalTheme: string }) {
+export default function ParticleBackground() {
+    let globalTheme = useContext(pageTheme)
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);

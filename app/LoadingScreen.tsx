@@ -1,4 +1,4 @@
-"use react"
+"use client"
 import React, { useEffect, useState } from "react";
 const LoadingScreen = () => {
     const [isFadeOut, setIsFadeOut] = useState(false);
