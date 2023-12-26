@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Karla } from 'next/font/google'
 import './globals.css'
-import MyApp from './app'
+import MyApp from './_app'
 const inter = Karla({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Jason Osorio Marin',

@@ -11,19 +11,19 @@ export default function Home() {
             setFadeIn(true);
         }, 600);
     }, []);
-    // const handleTransitionEnd = () => {
-    //     if (fadeIn) {
-    //         setRemoveBlackScreen(true);
-    //     }
-    // };
+    const handleTransitionEnd = () => {
+        if (fadeIn) {
+            setRemoveBlackScreen(true);
+        }
+    };
     return (
         <>
-            {/* <div
+            <div
                 className={`bg-dark-background h-screen w-screen fixed top-0 left-0 z-[200] ${fadeIn ? "opacity-0 transition-opacity duration-500 ease-in-out" : "opacity-100"} ${removeBlackScreen ? "hidden" : ""
                     }`}
                 onTransitionEnd={handleTransitionEnd}
-            /> */}
-            <MainPage/>
+            />
+              <MainPage/>
         </>
     );
 }
