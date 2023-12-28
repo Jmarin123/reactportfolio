@@ -1,3 +1,4 @@
+"use client"
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function TransitionWrapper({
@@ -40,14 +41,16 @@ export default function TransitionWrapper({
     const colNum = 10;
     return (
         
-        <div className="h-screen w-screen absolute top-0 left-0 pointer-events-none flex z-[9999]">
-            {
-            [...Array(colNum)].map((_, i) => {
-                return <motion.div {...anim(expand, colNum-i)} key={i} className="h-full w-full bg-black relative"></motion.div>
-            })
-            }
+        <>
+            <div className="h-screen w-screen absolute top-0 left-0 pointer-events-none flex">
+                {
+                [...Array(colNum)].map((_, i) => {
+                    return <motion.div {...anim(expand, colNum-i)} key={i} className="h-full w-full bg-black relative"></motion.div>
+                })
+                }
+            </div>
             {children}
-        </div>
+        </>
         
     )
 }
