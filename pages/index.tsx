@@ -1,8 +1,9 @@
 "use client"
 import { ReactNode, createContext, useEffect, useState } from "react";
 // import Router from "next/router"
-import Navbar from "./components/Navbar";
-import LoadingScreen from "./LoadingScreen";
+import TransitionWrapper from "@/app/components/transitionWrapper";
+import Navbar from "@/app/components/Navbar";
+import LoadingScreen from "@/app/LoadingScreen";
 import { AnimatePresence } from "framer-motion";
 export const pageTheme = createContext('dark');
 export default function MyApp({ children }: { children: ReactNode }){
@@ -32,15 +33,15 @@ export default function MyApp({ children }: { children: ReactNode }){
     //     }
     //     }, [])
     return (
-        <AnimatePresence mode="wait">
-        {isLoading ? (
+        <TransitionWrapper>
+        {/* {isLoading ? (
             <LoadingScreen />
-        ) : (
+        ) : ( */}
                 <pageTheme.Provider value={theme}>
                     <Navbar setGlobalTheme={setTheme}/>
                     {children}
                 </pageTheme.Provider>
-        )}
-        </AnimatePresence>
+        {/* )} */}
+        </TransitionWrapper>
     )
 }
