@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import useDarkMode from "../hooks/useDarkMode";
+import useDarkMode from "../../hooks/useDarkMode";
 interface SwitcherProps {
     setGlobalTheme: Dispatch<SetStateAction<string>>;
 }

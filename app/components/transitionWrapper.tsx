@@ -42,7 +42,7 @@ export default function TransitionWrapper({
     return (
         
         <>
-            <div className="h-screen w-screen absolute top-0 left-0 pointer-events-none flex overflow-x-hidden overflow-y-hidden z-100">
+            <div className="h-screen w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-100">
                 {
                 [...Array(colNum)].map((_, i) => {
                     return <motion.div {...anim(expand, colNum-i)} key={i} className="h-full w-full bg-black dark:bg-white relative opacity-50"></motion.div>
