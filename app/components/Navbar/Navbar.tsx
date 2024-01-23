@@ -62,9 +62,9 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                     </div>
                     <Link to='aboutPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">About Me</Link>
-                    <Link to='aboutPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
+                    <Link to='projectPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">Projects</Link>
-                    <Link to='aboutPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
+                    <Link to='contactPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">Contact Me</Link>
                 </div>
             </nav>
@@ -72,8 +72,8 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                 <div className={`md:hidden z-[60] fixed top-0 right-0 h-full w-full bg-light-secondary dark:bg-dark-primary flex items-center justify-center transform transition-[transform,colors] ease-in-out duration-300 ${isOpen ? 'translate-x-0 delay-150' : 'translate-x-full'}`}>
                     <div className="p-8 flex flex-col text-center">
                         <Link to='aboutPage' className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">About Me</Link>
-                        <Link to='aboutPage' className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Projects</Link>
-                        <Link to='aboutPage' className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Contact Me</Link>
+                        <Link to='projectPage' className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Projects</Link>
+                        <Link to='contactPage' className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Contact Me</Link>
                         <a href="./resume/Resume.pdf" download className="text-light-text dark:text-dark-text text-6xl cursor-pointer hover:text-gray-400 dark:hover:text-gray-400 transition py-4">Resume</a>
                     </div>
             </div>

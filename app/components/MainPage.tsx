@@ -2,6 +2,7 @@
 import ParticleBackground from "./TypingIntroMainPage/ParticleBackground"
 import TypingIntro from "./TypingIntroMainPage/TypingIntro"
 import About from "./About/AboutPage"
+import Projects from "./Projects/ProjectPage"
 // import TimelineElement from "./TimelineElement";
 // import { VerticalTimeline } from "./VTElements/VerticaleTimeline";
 
@@ -16,7 +17,7 @@ export default function MainPage() {
                     <About/>
                 </section>
                 <section className="h-screen">
-                    <About/>
+                    <Projects/>
                 </section>
 
                             {/* <VerticalTimelineElement
