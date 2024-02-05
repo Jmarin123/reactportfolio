@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     }, [isSticky]);
     return (
         <>
-            <nav className={`overflow-x-hidden fixed top-0 p-4 w-full flex justify-between items-center transition-colors duration-300 ease-in-out z-[100]  ${isSticky ? "dark:bg-dark-primary bg-light-secondary shadow-lg" : ""}`}> {/* First Z */}
+            <nav className={`overflow-x-hidden fixed top-0 p-4 w-full flex justify-between items-center transition-colors duration-300 ease-in-out z-[100]  ${isSticky ? "dark:bg-dark-primary bg-light-secondary shadow-lg" : ""}`}> 
                 <a onClick={scrollToTop} className='text-light-text dark:text-dark-text text-xl md:text-2xl text-center cursor-pointer'>Jason Osorio Marin</a>
                 <div className='flex space-x-3 items-center'>
                     <a href="/Resume.pdf" download>
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                         </button>
                     </a>
                     <Switcher setGlobalTheme={setGlobalTheme} />
-                    <div className="md:hidden text-white flex items-center z-[200]"> {/* Second Z */}
+                    <div className="md:hidden text-white flex items-center z-[200]">
                         <button className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700'
                             onClick={toggleNavbar}
 
@@ -60,12 +60,12 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                             ></div>
                         </button>
                     </div>
-                    <Link to='aboutPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
+                    {/* <Link to='aboutPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">About Me</Link>
                     <Link to='projectPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
                 transition max-md:hidden">Projects</Link>
                     <Link to='contactPage' smooth={true} className="text-light-text dark:text-dark-text text-lg cursor-pointer hover:text-gray-400 dark:hover:text-gray-400
-                transition max-md:hidden">Contact Me</Link>
+                transition max-md:hidden">Contact Me</Link> */}
                 </div>
             </nav>
             <div className={`md:hidden z-[60] fixed top-0 right-0 h-full w-full bg-light-primary dark:bg-dark-secondary transform transition-[transform,colors] ease-in-out duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full delay-150'}`}></div>

@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import {pageTheme} from '../../_app'
+import {pageTheme} from '../../switchForLoading'
 import Particles from "react-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
@@ -11,7 +11,7 @@ export default function ParticleBackground() {
     let themeColors = globalTheme == "dark" ? "#ffffff" : "#000000"
 
     return (
-        <section className="h-full overflow-x-hidden w-full blur-[2px] brightness-50 -z-50">
+        <section className="h-full overflow-x-hidden w-full blur-[2px] brightness-50 -z-50 overflow-y-hidden">
             <Particles
                 className="h-full"
                 id="tsparticles"

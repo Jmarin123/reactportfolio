@@ -1,26 +1,64 @@
 "use client"
-import { pageTheme } from '@/app/_app';
-import { useContext, useState } from 'react';
-import Terminal, { ColorMode, TerminalInput, TerminalOutput } from 'react-terminal-ui';
+import { useContext, useState, useCallback } from "react";
+import { ReactTerminal } from "react-terminal";
+import { TerminalContextProvider } from "react-terminal";
+import RealAbout from "./realAboutPage";
+import Projects from "../Projects/ProjectPage";
+import Contact from "../Contact/ContactPage";
+import { pageTheme } from "@/app/switchForLoading";
 
-export default function About(){
-    let globalTheme = useContext(pageTheme)
-    let terminalTheme = globalTheme === "dark" ? ColorMode.Dark : ColorMode.Light;
-    const [terminalLineData, setTerminalLineData] = useState([
-        <TerminalOutput key={0}>Welcome to the React Terminal UI Demo!</TerminalOutput>
-    ]);
-    const what = (inputData:string) => {
-        let ld = [...terminalLineData];
-        let unique_key = new Date().getTime();
-        ld.push(<TerminalInput key={'input' + unique_key}>{inputData}</TerminalInput>);
-        ld.push(<TerminalOutput key={'output' + unique_key}>{inputData}</TerminalOutput>)
-        setTerminalLineData(ld);
-    }
+type PageComponent = JSX.Element | null;
+
+export default function About() {
+    const [currentPage, setCurrentPage] = useState("exit");
+
+    const setPage = useCallback((page: string) => {
+        setCurrentPage(page);
+        return `${page} page loaded`;
+    }, []);
+
+    const commands = {
+        whoami: () => setPage("who"),
+        "show-projects": () => setPage("projects"),
+        "reach-out": () => setPage("contact"),
+        exit: () => setPage("exit"),
+        help: (
+            <>These are the valid commands: <br />
+                whoami - Get to know me!<br />
+                show-projects - Get to see my previous and current projects made!<br />
+                reach-out - A great way to get in touch with me! <br />
+                exit - Want to close the current page? <br/>
+                clear - Clears terminal of previous commands
+            </>
+        )
+    };
+
+    const pageComponents: Record<string, PageComponent> = {
+        who: <RealAbout />,
+        projects: <Projects />,
+        contact: <Contact />,
+        exit: null
+    };
+
+    const currentTheme:string = useContext(pageTheme);
+    const terminalTheme:string = currentTheme === "dark" ? "dracula" : "light";
+
     return (
-            <div id='aboutPage' className="h-full w-screen bg-light-background dark:bg-dark-background flex items-center justify-center">
-                <Terminal colorMode={ terminalTheme } height='400px'  onInput={what}>
-                    { terminalLineData }
-                </Terminal>
+        <TerminalContextProvider>
+            <div id="aboutPage" className="h-full w-screen bg-light-background dark:bg-dark-background flex flex-col p-40">
+                <div className="w-full h-96 overflow-hidden rounded-lg shadow-md">
+                    <ReactTerminal
+                        showControlButtons={false}
+                        showControlBar={false}
+                        commands={commands}
+                        prompt={"$"}
+                        welcomeMessage={<>Welcome, to view all the commands run &quot;help&quot;<br /></>}
+                        errorMessage={(message: string) => `${message}: not found`}
+                        theme={terminalTheme}
+                    />
+                </div>
+                {pageComponents[currentPage]}
             </div>
-    )
+        </TerminalContextProvider>
+    );
 }

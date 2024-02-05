@@ -8,7 +8,7 @@ import Projects from "./Projects/ProjectPage"
 
 export default function MainPage() {
     return (
-            <main className="overflow-x-hidden">
+            <main className="overflow-x-hidden overflow-y-hidden">
                 <section className="h-screen shadow-md">
                     <ParticleBackground/>
                     <TypingIntro />
