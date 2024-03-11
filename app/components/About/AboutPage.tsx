@@ -14,7 +14,7 @@ export default function About() {
 
     const setPage = useCallback((page: string) => {
         setCurrentPage(page);
-        return `${page} page loaded`;
+        return `${page} page loading...`;
     }, []);
 
     const commands = {
@@ -45,8 +45,8 @@ export default function About() {
 
     return (
         <TerminalContextProvider>
-            <div id="aboutPage" className="h-full w-screen bg-light-background dark:bg-dark-background flex flex-col p-40">
-                <div className="w-full h-96 overflow-hidden rounded-lg shadow-md">
+            <div id="aboutPage" className="h-full w-screen bg-light-background dark:bg-dark-background flex flex-col">
+                <div className="w-full h-96 overflow-hidden rounded-lg p-16">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}

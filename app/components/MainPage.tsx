@@ -13,12 +13,12 @@ export default function MainPage() {
                     <ParticleBackground/>
                     <TypingIntro />
                 </section>
-                <section className="h-screen">
+                <section className="min-h-screen h-full">
                     <About/>
                 </section>
-                <section className="h-screen">
+                {/* <section className="h-screen">
                     <Projects/>
-                </section>
+                </section> */}
 
                             {/* <VerticalTimelineElement
                                 visible={inView}

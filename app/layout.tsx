@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className='dark'>
       <body className={`${inter.className} dark:bg-dark-background bg-light-background`}>
+        <link rel="icon" href="/icon.ico" sizes="any" />
         <MyApp>
           {children}
         </MyApp>
