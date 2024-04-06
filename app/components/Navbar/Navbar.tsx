@@ -33,9 +33,14 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
     return (
         <>
             <nav className={`overflow-x-hidden fixed top-0 p-4 w-full flex justify-between items-center transition-colors duration-300 ease-in-out z-[100]  ${isSticky ? "dark:bg-dark-primary bg-light-secondary shadow-lg" : ""}`}> 
-                <a onClick={scrollToTop} className='text-light-text dark:text-dark-text text-xl md:text-2xl text-center cursor-pointer'>Jason Osorio Marin</a>
+                <a href='/' className='text-light-text dark:text-dark-text text-xl md:text-2xl text-center cursor-pointer'>Jason Osorio Marin</a>
                 <div className='flex space-x-3 items-center'>
-                    <a href="/Resume.pdf" download>
+                    {/* <a href="/Resume.pdf" download>
+                        <button className="bg-transparent hover:bg-light-primary dark:hover:bg-light-secondary  text-light-text dark:text-dark-text font-semibold dark:hover:text-light-text hover:text-white py-2 px-4 border border-light-primary dark:border-light-secondary dark:hover:border-transparent hover:border-transparent rounded max-md:hidden">
+                            Resume
+                        </button>
+                    </a> */}
+                    <a href="/resume">
                         <button className="bg-transparent hover:bg-light-primary dark:hover:bg-light-secondary  text-light-text dark:text-dark-text font-semibold dark:hover:text-light-text hover:text-white py-2 px-4 border border-light-primary dark:border-light-secondary dark:hover:border-transparent hover:border-transparent rounded max-md:hidden">
                             Resume
                         </button>
