@@ -41,8 +41,8 @@ export default function TransitionWrapper({
     const colNum = 10;
     return (
         
-        <>
-            <div className="h-screen w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-100">
+        <div className="h-screen relative">
+            <div className="h-full w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-20">
                 {
                 [...Array(colNum)].map((_, i) => {
                     return <motion.div {...anim(expand, colNum-i)} key={i} className="h-full w-full bg-black dark:bg-white relative opacity-50"></motion.div>
@@ -50,7 +50,7 @@ export default function TransitionWrapper({
                 }
             </div>
             {children}
-        </>
+        </div>
         
     )
 }

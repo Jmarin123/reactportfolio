@@ -4,7 +4,7 @@ import { ReactNode, createContext, useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import LoadingScreen from "./LoadingScreen";
 export const pageTheme = createContext('dark');
-export default function MyApp({ children }: { children: ReactNode }){
+export default function LoadingSwitch({ children }: { children: ReactNode }){
     const [theme, setTheme] = useState<string>('dark');
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Karla } from 'next/font/google'
 import './globals.css'
-import MyApp from './switchForLoading'
+import LoadingSwitch from './switchForLoading'
 const inter = Karla({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Jason Osorio Marin',
@@ -16,9 +16,9 @@ export default function RootLayout({
     <html lang="en" className='dark'>
       <body className={`${inter.className} dark:bg-dark-background bg-light-background`}>
         <link rel="icon" href="/icon.ico" sizes="any" />
-        <MyApp>
+        <LoadingSwitch>
           {children}
-        </MyApp>
+        </LoadingSwitch>
       </body>
     </html>
   )

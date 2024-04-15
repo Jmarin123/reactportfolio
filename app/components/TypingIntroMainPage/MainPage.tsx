@@ -1,7 +1,6 @@
 
-import ParticleBackground from "./TypingIntroMainPage/ParticleBackground"
-import TypingIntro from "./TypingIntroMainPage/TypingIntro"
-import About from "./Terminal"
+import ParticleBackground from "./ParticleBackground"
+import TypingIntro from "./TypingIntro"
 // import Projects from "./Projects/ProjectPage"
 // import TimelineElement from "./TimelineElement";
 // import { VerticalTimeline } from "./VTElements/VerticaleTimeline";
@@ -9,16 +8,11 @@ import About from "./Terminal"
 export default function MainPage() {
     return (
             <main className="overflow-x-hidden overflow-y-hidden">
-                <section className="h-screen shadow-md">
+                <TypingIntro />
+                {/* <section className="h-screen shadow-md relative">
                     <ParticleBackground/>
-                    <TypingIntro />
-                </section>
-                <section className="min-h-screen h-full">
-                    <About/>
-                </section>
-                {/* <section className="h-screen">
-                    <Projects/>
                 </section> */}
+                
 
                             {/* <VerticalTimelineElement
                                 visible={inView}

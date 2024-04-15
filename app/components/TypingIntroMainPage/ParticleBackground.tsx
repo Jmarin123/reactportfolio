@@ -11,9 +11,9 @@ export default function ParticleBackground() {
     let themeColors = globalTheme == "dark" ? "#ffffff" : "#000000"
 
     return (
-        <section className="h-full overflow-x-hidden w-full blur-[2px] brightness-50 -z-50 overflow-y-hidden">
+        <section className="absolute w-full h-full overflow-x-hidden blur-[2px] brightness-50">
             <Particles
-                className="h-full"
+                className="h-full w-full -z-50"
                 id="tsparticles"
                 init={particlesInit}
                 options={{

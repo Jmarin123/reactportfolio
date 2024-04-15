@@ -6,12 +6,13 @@ import RealAbout from "./About/AboutPage";
 import Projects from "./Projects/ProjectPage";
 import Contact from "./Contact/ContactPage";
 import { pageTheme } from "@/app/switchForLoading";
-import MainPage from "./MainPage";
+import MainPage from "./TypingIntroMainPage/MainPage";
+import ParticleBackground from "./TypingIntroMainPage/ParticleBackground";
 
 type PageComponent = JSX.Element | null;
 
-export default function About() {
-    const [currentPage, setCurrentPage] = useState("exit");
+export default function Terminal() {
+    const [currentPage, setCurrentPage] = useState("landing");
 
     const setPage = useCallback((page: string) => {
         setCurrentPage(page);
@@ -26,7 +27,7 @@ export default function About() {
         exit: () => setPage("exit"),
         help: (
             <>These are the valid commands: <br />
-                landing - Loads the landing page<br />
+                landing - Loads the landing page.<br />
                 whoami - Get to know me!<br />
                 show-projects - Get to see my previous and current projects made!<br />
                 reach-out - A great way to get in touch with me! <br />
@@ -49,8 +50,11 @@ export default function About() {
 
     return (
         <TerminalContextProvider>
-            <div id="aboutPage" className="h-full w-screen bg-light-background dark:bg-dark-background flex flex-col">
-                <div className="w-full h-96 overflow-hidden rounded-lg p-16">
+            {/* DO NO CHANGE IT TO W-SCREEN IDK WHY BUT IT FUCKS IT UP */}
+            <div id="aboutPage" className="h-screen bg-light-background dark:bg-dark-background flex flex-col relative justify-center ">
+                <ParticleBackground/>
+                {pageComponents[currentPage]}
+                <div className="h-96 overflow-auto rounded-lg px-16 z-10 my-6">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}
@@ -61,7 +65,6 @@ export default function About() {
                         theme={terminalTheme}
                     />
                 </div>
-                {pageComponents[currentPage]}
             </div>
         </TerminalContextProvider>
     );

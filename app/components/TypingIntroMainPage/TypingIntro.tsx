@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import Terminal from "../Terminal";
 
 export default function TypingIntro() {
     let [secondLine, setSecondLine] = useState(false);
@@ -15,7 +16,7 @@ export default function TypingIntro() {
     }
 
     return (
-            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col text-center -z-50">
+            <div className="flex items-center justify-center flex-col text-center my-6">
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
                 <TypeAnimation
@@ -60,6 +61,7 @@ export default function TypingIntro() {
                     className="text-4xl md:text-6xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-defaultx"
                     repeat={0}
                 /> : ''}
+                {/* <Terminal/> */}
 
                 <style global jsx>{`
             .custom-type-animation-cursor::after {
