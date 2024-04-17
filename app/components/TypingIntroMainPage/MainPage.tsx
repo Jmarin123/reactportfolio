@@ -7,7 +7,7 @@ import TypingIntro from "./TypingIntro"
 
 export default function MainPage() {
     return (
-            <main className="overflow-x-hidden overflow-y-hidden">
+            <main>
                 <TypingIntro />
                 {/* <section className="h-screen shadow-md relative">
                     <ParticleBackground/>

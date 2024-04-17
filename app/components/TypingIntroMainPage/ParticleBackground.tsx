@@ -13,7 +13,7 @@ export default function ParticleBackground() {
     return (
         <section className="absolute w-full h-full overflow-x-hidden blur-[2px] brightness-50">
             <Particles
-                className="h-full w-full -z-50"
+                className="h-screen w-full"
                 id="tsparticles"
                 init={particlesInit}
                 options={{

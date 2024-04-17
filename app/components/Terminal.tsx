@@ -51,10 +51,10 @@ export default function Terminal() {
     return (
         <TerminalContextProvider>
             {/* DO NO CHANGE IT TO W-SCREEN IDK WHY BUT IT FUCKS IT UP */}
-            <div id="aboutPage" className="h-screen bg-light-background dark:bg-dark-background flex flex-col relative justify-center ">
+            <div id="aboutPage" className="h-full bg-light-background dark:bg-dark-background flex flex-col relative items-center justify-center">
                 <ParticleBackground/>
                 {pageComponents[currentPage]}
-                <div className="h-96 overflow-auto rounded-lg px-16 z-10 my-6">
+                <div className="h-96 rounded-lg px-16 my-6 w-full z-[1] opacity-90">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}

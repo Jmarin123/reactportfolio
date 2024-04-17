@@ -58,7 +58,7 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className="text-4xl md:text-6xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-defaultx"
+                    className="my-6 text-4xl md:text-6xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-defaultx"
                     repeat={0}
                 /> : ''}
                 {/* <Terminal/> */}
