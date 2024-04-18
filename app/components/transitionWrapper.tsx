@@ -40,8 +40,7 @@ export default function TransitionWrapper({
     }
     const colNum = 10;
     return (
-        
-        <div className="h-screen relative">
+        <div className="relative box-border">
             <div className="h-full w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-20">
                 {
                 [...Array(colNum)].map((_, i) => {
