@@ -8,7 +8,7 @@ export default function ParticleBackground() {
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
-    let themeColors = globalTheme == "dark" ? "#ffffff" : "#000000"
+    let themeColors = globalTheme ? "#ffffff" : "#000000"
 
     return (
         <section className="absolute w-full h-full overflow-x-hidden blur-[2px] brightness-50">

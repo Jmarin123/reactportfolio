@@ -1,30 +1,31 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import useDarkMode from "../../hooks/useDarkMode";
-interface SwitcherProps {
-    setGlobalTheme: Dispatch<SetStateAction<string>>;
-}
-const Switcher: React.FC<SwitcherProps> = ({ setGlobalTheme }) => {
-    const [colorTheme, setTheme] = useDarkMode();
-    const [darkSide, setDarkSide] = useState(
-        colorTheme === "light" ? true : false
-    );
-
+import { pageTheme } from "@/app/switchForLoading";
+const Switcher = () => {
+    const {theme, setTheme} = useContext(pageTheme)
     useEffect(() => {
-        // Set darkSide based on colorTheme when colorTheme changes
-        setDarkSide(colorTheme === "light" ? true : false);
-        setGlobalTheme(colorTheme === "light" ? 'dark' : 'light')
-    }, [colorTheme, setGlobalTheme]);
-    const toggleDarkMode = (checked: boolean) => {
-        (setTheme as Dispatch<SetStateAction<string>>)(colorTheme as string);
-        setDarkSide(checked);
+        if (theme == false){
+            const root = window.document.documentElement;
+            root.classList.remove('dark');
+            root.classList.add('light');
+            localStorage.setItem('dark', 'false');
+        }else{
+            const root = window.document.documentElement;
+            root.classList.remove('light');
+            root.classList.add('dark');
+            localStorage.setItem('dark', 'true');
+        }
+    }, [theme])
+
+    const toggleDarkMode = () => {
+        setTheme(!theme)
     };
 
     return (
-        <div className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700' onClick={() => { toggleDarkMode(darkSide) }}>
+        <div className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700' onClick={() => { toggleDarkMode() }}>
             <DarkModeSwitch
-                checked={darkSide}
-                onChange={toggleDarkMode}
+                checked={theme}
+                onChange={() => {}}
                 size={20}
             />
         </div>

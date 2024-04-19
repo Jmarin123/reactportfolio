@@ -13,7 +13,9 @@ type PageComponent = JSX.Element | null;
 
 export default function Terminal() {
     const [currentPage, setCurrentPage] = useState("landing");
-
+    const {theme} = useContext(pageTheme);
+    const terminalTheme:string = theme ? "dracula" : "light";
+    
     const setPage = useCallback((page: string) => {
         setCurrentPage(page);
         return `${page} page loading...`;
@@ -45,8 +47,6 @@ export default function Terminal() {
         exit: null
     };
 
-    const currentTheme:string = useContext(pageTheme);
-    const terminalTheme:string = currentTheme === "dark" ? "dracula" : "light";
 
     return (
         <TerminalContextProvider>
@@ -55,7 +55,7 @@ export default function Terminal() {
             <div id="aboutPage" className="min-h-screen bg-light-background dark:bg-dark-background flex flex-col relative justify-center">
                 <ParticleBackground/>
                 {pageComponents[currentPage]}
-                <div className="h-96 min-h-[400px] rounded-lg px-16 my-6 w-full opacity-90">
+                <div className="h-96 rounded-lg px-16 my-6 w-full opacity-90">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}

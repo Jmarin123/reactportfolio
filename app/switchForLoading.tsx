@@ -1,14 +1,43 @@
 "use client"
-import { ReactNode, createContext, useEffect, useState } from "react";
+import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 // import Router from "next/router"
 import Navbar from "./components/Navbar/Navbar";
 import LoadingScreen from "./LoadingScreen";
-export const pageTheme = createContext('dark');
+
+interface PageThemeContextType {
+    theme: boolean;
+    setTheme: (theme: boolean) => void;
+}
+
+// Create the context
+export const pageTheme = createContext<PageThemeContextType>({
+    theme: false,
+    setTheme: () => {}
+});
+
 export default function LoadingSwitch({ children }: { children: ReactNode }){
-    const [theme, setTheme] = useState<string>('dark');
+    const [theme, setTheme] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-      // Simulate an asynchronous operation (e.g., data fetching)
+        //DARK == TRUE
+        //LIGHT == FALSE
+        if (localStorage?.getItem("dark") != null){
+            let boolLight:boolean = JSON.parse(localStorage.getItem("dark")!);
+            if(boolLight){
+                const root = window.document.documentElement;
+                root.classList.remove('light');
+                root.classList.add('dark');
+            }else{
+                const root = window.document.documentElement;
+                root.classList.remove('dark');
+                root.classList.add('light');
+            }
+            setTheme(boolLight);
+            // const root = window.document.documentElement;
+            // root.classList.remove('dark');
+            // root.classList.add('light');
+            // localStorage.setItem('dark', 'false');
+        }
         setTimeout(() => {
             setIsLoading(false); // Set isLoading to false when the data is loaded
       }, 700); // Simulating a 2-second loading time
@@ -18,8 +47,8 @@ export default function LoadingSwitch({ children }: { children: ReactNode }){
         {isLoading ? (
             <LoadingScreen />
         ) : (
-                <pageTheme.Provider value={theme}>
-                    <Navbar setGlobalTheme={setTheme}/>
+                <pageTheme.Provider value={{ theme, setTheme }}>
+                    <Navbar/>
                     {children}
                 </pageTheme.Provider>
         )}

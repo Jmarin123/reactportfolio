@@ -2,11 +2,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import Switcher from './Switcher';
 import { Link, animateScroll as scroll } from 'react-scroll';
-
-interface NavbarProps {
-    setGlobalTheme: Dispatch<SetStateAction<string>>;
-}
-const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
+const Navbar = () => {
     const [isOpen, setMenuOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const toggleNavbar = () => {
@@ -45,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ setGlobalTheme }) => {
                             Resume
                         </button>
                     </a>
-                    <Switcher setGlobalTheme={setGlobalTheme} />
+                    <Switcher />
                     {/* <div className="md:hidden text-white flex items-center z-[200]">
                         <button className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700'
                             onClick={toggleNavbar}
