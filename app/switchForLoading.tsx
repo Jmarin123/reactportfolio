@@ -9,7 +9,8 @@ interface PageThemeContextType {
     setTheme: (theme: boolean) => void;
 }
 
-// Create the context
+// * DARK == TRUE * //
+// * LIGHT == FALSE * //
 export const pageTheme = createContext<PageThemeContextType>({
     theme: false,
     setTheme: () => {}
@@ -19,8 +20,6 @@ export default function LoadingSwitch({ children }: { children: ReactNode }){
     const [theme, setTheme] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        //DARK == TRUE
-        //LIGHT == FALSE
         if (localStorage?.getItem("dark") != null){
             let boolLight:boolean = JSON.parse(localStorage.getItem("dark")!);
             if(boolLight){
@@ -33,10 +32,6 @@ export default function LoadingSwitch({ children }: { children: ReactNode }){
                 root.classList.add('light');
             }
             setTheme(boolLight);
-            // const root = window.document.documentElement;
-            // root.classList.remove('dark');
-            // root.classList.add('light');
-            // localStorage.setItem('dark', 'false');
         }
         setTimeout(() => {
             setIsLoading(false); // Set isLoading to false when the data is loaded
