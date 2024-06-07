@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import { pageTheme } from "@/app/switchForLoading";
+import { pageTheme } from "@/app/LoadingSwitch";
 const Switcher = () => {
     const {theme, setTheme} = useContext(pageTheme)
     useEffect(() => {

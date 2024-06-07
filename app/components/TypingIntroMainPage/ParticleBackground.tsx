@@ -1,5 +1,5 @@
 import { useCallback, useContext } from "react";
-import {pageTheme} from '../../switchForLoading'
+import {pageTheme} from '../../LoadingSwitch'
 import Particles from "react-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";

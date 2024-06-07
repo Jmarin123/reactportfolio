@@ -5,7 +5,7 @@ import { TerminalContextProvider } from "react-terminal";
 import RealAbout from "./About/AboutPage";
 import Projects from "./Projects/ProjectPage";
 import Contact from "./Contact/ContactPage";
-import { pageTheme } from "@/app/switchForLoading";
+import { pageTheme } from "@/app/LoadingSwitch";
 import MainPage from "./TypingIntroMainPage/MainPage";
 import ParticleBackground from "./TypingIntroMainPage/ParticleBackground";
 

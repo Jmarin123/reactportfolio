@@ -43,7 +43,6 @@ export default function LoadingSwitch({ children }: { children: ReactNode }){
             <LoadingScreen />
         ) : (
                 <pageTheme.Provider value={{ theme, setTheme }}>
-                    <Navbar/>
                     {children}
                 </pageTheme.Provider>
         )}
