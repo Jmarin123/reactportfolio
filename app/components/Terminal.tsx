@@ -54,7 +54,7 @@ export default function Terminal() {
             {/* JUSTIFY CENTERING WITH FLEX BOX CAUSES THINGS TO CLIP OUT WHY */}
             <div id="aboutPage" className="flex flex-col relative ">
                 {/* <ParticleBackground/> */}
-                <div className="h-20 rounded-lg px-16 my-6 w-full opacity-90">
+                <div className="h-48 rounded-lg px-16 my-6 w-full opacity-90">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}

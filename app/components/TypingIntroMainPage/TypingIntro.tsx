@@ -28,7 +28,7 @@ export default function TypingIntro() {
                         secondLineCallback
                     ]}
                     speed={20}
-                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default col-start-2 row-start-1"
+                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default col-start-2 row-start-1 bg-[#cdb4e0]"
                     repeat={0}
                 />
                 {secondLine ? <TypeAnimation
@@ -41,7 +41,7 @@ export default function TypingIntro() {
                         thirdCallBack
                     ]}
                     speed={20}
-                    className="text-3xl md:text-8xl dark:text-dark-text text-light-text flex justify-center items-center font-bold select-none cursor-default col-start-3 row-start-2 text-center"
+                    className={`text-3xl md:text-8xl dark:text-dark-text text-light-text flex justify-center items-center font-bold select-none cursor-default col-start-3 row-start-2 text-center`}
                     repeat={0}
                 /> : ''}
                 {thirdLine ? <TypeAnimation
@@ -58,7 +58,7 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className="my-6 text-4xl md:text-7xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-start-2 row-start-3"
+                    className=" text-4xl md:text-8xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-span-2 col-start-2 row-start-3 flex justify-center items-center bg-[#cdb4e0]"
                     repeat={0}
                 /> : ''}
                 {/* <Terminal/> */}

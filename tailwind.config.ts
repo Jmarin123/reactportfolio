@@ -18,7 +18,7 @@ const config: Config = {
         },
         light: {
           'text': '#040307',
-          'background': '#ffffff',
+          'background': '#F5F5F5',
           'primary': '#5c428f',
           'secondary': '#f1edf7',
           'accent': '#382858',
