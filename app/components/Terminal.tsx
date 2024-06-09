@@ -52,10 +52,9 @@ export default function Terminal() {
         <TerminalContextProvider>
             {/* DO NO CHANGE IT TO W-SCREEN IDK WHY BUT IT FUCKS IT UP */}
             {/* JUSTIFY CENTERING WITH FLEX BOX CAUSES THINGS TO CLIP OUT WHY */}
-            <div id="aboutPage" className="min-h-screen bg-light-background dark:bg-dark-background flex flex-col relative justify-center">
-                <ParticleBackground/>
-                {pageComponents[currentPage]}
-                <div className="h-96 rounded-lg px-16 my-6 w-full opacity-90">
+            <div id="aboutPage" className="flex flex-col relative ">
+                {/* <ParticleBackground/> */}
+                <div className="h-20 rounded-lg px-16 my-6 w-full opacity-90">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}
@@ -65,7 +64,9 @@ export default function Terminal() {
                         errorMessage={(message: string) => `${message}: not found`}
                         theme={terminalTheme}
                     />
+                    
                 </div>
+                {pageComponents[currentPage]}
             </div>
         </TerminalContextProvider>
     );

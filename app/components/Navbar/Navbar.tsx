@@ -28,7 +28,7 @@ const Navbar = () => {
     }, [isSticky]);
     return (
         <>
-            <nav className={`overflow-x-hidden fixed top-0 py-4 px-20 w-full flex justify-between items-center transition-colors duration-300 ease-in-out z-[100]  ${isSticky ? "dark:bg-dark-primary bg-light-secondary shadow-lg" : ""}`}> 
+            <nav className={`overflow-x-hidden sticky top-0 py-4 px-20 w-full flex justify-between items-center transition-colors duration-300 ease-in-out z-[100]  ${isSticky ? "dark:bg-dark-primary bg-light-secondary shadow-lg" : ""}`}> 
                 <a href='/' className='text-light-text dark:text-dark-text text-xl md:text-2xl max-md:text-4xl text-center cursor-pointer'>Jason Osorio Marin</a>
                 <div className='flex space-x-3 items-center'>
                     {/* <a href="/Resume.pdf" download>

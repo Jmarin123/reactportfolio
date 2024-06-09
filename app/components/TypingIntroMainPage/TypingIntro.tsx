@@ -16,7 +16,7 @@ export default function TypingIntro() {
     }
 
     return (
-            <div className="flex items-center justify-center flex-col text-center my-6">
+            <div className="grid grid-rows-3 grid-cols-4 my-6">
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
                 <TypeAnimation
@@ -28,7 +28,7 @@ export default function TypingIntro() {
                         secondLineCallback
                     ]}
                     speed={20}
-                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default"
+                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default col-start-2 row-start-1"
                     repeat={0}
                 />
                 {secondLine ? <TypeAnimation
@@ -41,7 +41,7 @@ export default function TypingIntro() {
                         thirdCallBack
                     ]}
                     speed={20}
-                    className="text-3xl md:text-4xl dark:text-dark-text text-light-text text-center font-bold select-none cursor-default"
+                    className="text-3xl md:text-8xl dark:text-dark-text text-light-text flex justify-center items-center font-bold select-none cursor-default col-start-3 row-start-2 text-center"
                     repeat={0}
                 /> : ''}
                 {thirdLine ? <TypeAnimation
@@ -58,7 +58,7 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className="my-6 text-4xl md:text-6xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-defaultx"
+                    className="my-6 text-4xl md:text-7xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-start-2 row-start-3"
                     repeat={0}
                 /> : ''}
                 {/* <Terminal/> */}
