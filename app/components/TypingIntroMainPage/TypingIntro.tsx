@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Terminal from "../Terminal";
+import './Typing.css'
 
 export default function TypingIntro() {
     let [secondLine, setSecondLine] = useState(false);
     let [thirdLine, setThirdLine] = useState(false);
+    let info = ''
     let secondLineCallback = (el: HTMLElement | null) => {
         el?.classList.remove("custom-type-animation-cursor");
+        info = 'expand-animation'
         setSecondLine(true)
     }
 
@@ -19,18 +21,22 @@ export default function TypingIntro() {
             <div className="grid grid-rows-3 grid-cols-4 my-6">
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
-                <TypeAnimation
-                    cursor={false}
-                    sequence={[
-                        '',
-                        900,
-                        'Hello! I am Jason Osorio Marin',
-                        secondLineCallback
-                    ]}
-                    speed={20}
-                    className="text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default col-start-2 row-start-1 bg-[#cdb4e0]"
-                    repeat={0}
-                />
+                <div className={`col-start-2 row-start-1 `}>
+                    <div className={`flex relative ${secondLine ? 'expand-animation' : ''}`}>
+                        <TypeAnimation
+                            cursor={false}
+                            sequence={[
+                                '',
+                                900,
+                                'Hello! I am Jason Osorio Marin',
+                                secondLineCallback
+                            ]}
+                            speed={20}
+                            className={`text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default`}
+                            repeat={0}
+                        />
+                    </div>
+                </div>
                 {secondLine ? <TypeAnimation
                     cursor={false}
                     sequence={[
