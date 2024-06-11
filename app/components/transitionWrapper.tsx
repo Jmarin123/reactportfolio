@@ -1,6 +1,6 @@
 "use client"
 import { AnimatePresence, motion } from "framer-motion";
-
+import './visualizeBackground.css'
 export default function TransitionWrapper({
     children,
   }: {
@@ -17,7 +17,7 @@ export default function TransitionWrapper({
     }
     const expand = {
         initial: {
-            top: 0
+            top: "50%"
         },
         enter: (i: number) => ({
             top: "100%",
@@ -40,14 +40,16 @@ export default function TransitionWrapper({
     }
     const colNum = 10;
     return (
-        <div className="relative box-border h-screen">
-            <div className="h-full w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-20">
+        //PLAN IS TO MAKE 2 BARS OPEN FROM THE MIDDLE
+        <div className="relative box-border min-h-screen">
+            {/* <div className="h-full w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-20">
                 {
                 [...Array(colNum)].map((_, i) => {
                     return <motion.div {...anim(expand, colNum-i)} key={i} className="h-full w-full bg-black dark:bg-white relative opacity-50"></motion.div>
                 })
                 }
-            </div>
+            </div> */}
+            <div className="computer-background"/>
             {children}
         </div>
         
