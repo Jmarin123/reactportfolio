@@ -22,7 +22,7 @@ export default function TypingIntro() {
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
                 <div className={`col-start-2 row-start-1 `}>
-                    <div className={`flex relative ${secondLine ? 'expand-animation' : ''}`}>
+                    <div className={`flex relative ${secondLine ? 'expand-animation' : ''} before:bg-slate-500`}>
                         <TypeAnimation
                             cursor={false}
                             sequence={[
@@ -64,7 +64,7 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className=" text-4xl md:text-8xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-span-2 col-start-2 row-start-3 flex justify-center items-center bg-[#cdb4e0]"
+                    className=" text-4xl md:text-8xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-span-2 col-start-2 row-start-3 flex justify-center items-center"
                     repeat={0}
                 /> : ''}
                 {/* <Terminal/> */}

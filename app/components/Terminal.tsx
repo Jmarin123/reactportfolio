@@ -18,6 +18,9 @@ export default function Terminal() {
     
     const setPage = useCallback((page: string) => {
         setCurrentPage(page);
+        if(page == "exit"){
+            return "exiting..."
+        }
         return `${page} page loading...`;
     }, []);
 
