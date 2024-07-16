@@ -22,7 +22,7 @@ const Switcher = () => {
     };
 
     return (
-        <div className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700' onClick={() => { toggleDarkMode() }}>
+        <div className='rounded-full bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 p-3 cursor-pointer dark:hover:bg-neutral-700 mr-2' onClick={() => { toggleDarkMode() }}>
             <DarkModeSwitch
                 checked={theme}
                 onChange={() => {}}

@@ -41,7 +41,7 @@ export default function TransitionWrapper({
     const colNum = 10;
     return (
         //PLAN IS TO MAKE 2 BARS OPEN FROM THE MIDDLE
-        <div className="relative box-border min-h-screen">
+        <div className="relative box-border min-h-screen flex flex-col">
             {/* <div className="h-full w-full absolute top-0 left-0 pointer-events-none flex overflow-hidden z-20">
                 {
                 [...Array(colNum)].map((_, i) => {
@@ -50,6 +50,7 @@ export default function TransitionWrapper({
                 }
             </div> */}
             <div className="computer-background"/>
+
             {children}
         </div>
         

@@ -55,9 +55,9 @@ export default function Terminal() {
         <TerminalContextProvider>
             {/* DO NO CHANGE IT TO W-SCREEN IDK WHY BUT IT FUCKS IT UP */}
             {/* JUSTIFY CENTERING WITH FLEX BOX CAUSES THINGS TO CLIP OUT WHY */}
-            <div id="aboutPage" className="flex flex-col relative ">
+            <div id="aboutPage" className="flex flex-col flex-grow">
                 {/* <ParticleBackground/> */}
-                <div className="h-48 rounded-lg px-16 my-6 w-full opacity-90">
+                <div className="h-48 rounded-lg px-16 mt-6 w-full opacity-90">
                     <ReactTerminal
                         showControlButtons={false}
                         showControlBar={false}

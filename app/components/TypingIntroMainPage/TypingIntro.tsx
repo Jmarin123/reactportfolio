@@ -18,25 +18,23 @@ export default function TypingIntro() {
     }
 
     return (
-            <div className="grid grid-rows-3 grid-cols-4 my-6">
+            <div className="flex h-full flex-col flex-grow justify-center"> {/* */}
                 {/* <div className="text-white text-4xl">Content on Top</div>
             <div className="text-white text-4xl">TEST</div> */}
-                <div className={`col-start-2 row-start-1 `}>
-                    <div className={`flex relative ${secondLine ? 'expand-animation' : ''} before:bg-slate-500`}>
-                        <TypeAnimation
-                            cursor={false}
-                            sequence={[
-                                '',
-                                900,
-                                'Hello! I am Jason Osorio Marin',
-                                secondLineCallback
-                            ]}
-                            speed={20}
-                            className={`text-5xl md:text-8xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default`}
-                            repeat={0}
-                        />
-                    </div>
-                </div>
+                 {/* col-start-2 row-start-1 */}
+                <TypeAnimation
+                    cursor={false}
+                    sequence={[
+                        '',
+                        900,
+                        'Hello! I am Jason Osorio Marin',
+                        secondLineCallback
+                    ]}
+                    speed={20}
+                    className={`text-5xl sm:text-6xl dark:text-dark-text text-light-text text-center custom-type-animation-cursor font-bold select-none cursor-default before:content-['>'] my-3`}
+                    repeat={0}
+                />
+                
                 {secondLine ? <TypeAnimation
                     cursor={false}
                     sequence={[
@@ -47,7 +45,7 @@ export default function TypingIntro() {
                         thirdCallBack
                     ]}
                     speed={20}
-                    className={`text-3xl md:text-8xl dark:text-dark-text text-light-text flex justify-center items-center font-bold select-none cursor-default col-start-3 row-start-2 text-center`}
+                    className={`text-5xl sm:text-6xl  dark:text-dark-text text-light-text items-center font-bold select-none cursor-default text-center before:content-['>'] mb-3`}
                     repeat={0}
                 /> : ''}
                 {thirdLine ? <TypeAnimation
@@ -64,7 +62,7 @@ export default function TypingIntro() {
                         (el) => el?.classList.remove("custom-type-animation-cursor")
                     ]}
                     speed={20}
-                    className=" text-4xl md:text-8xl dark:text-dark-accent text-light-primary text-center font-bold select-none cursor-default col-span-2 col-start-2 row-start-3 flex justify-center items-center"
+                    className="text-6xl sm:text-7xl dark:text-dark-accent text-light-primary font-bold select-none cursor-default text-center before:content-['>'] " 
                     repeat={0}
                 /> : ''}
                 {/* <Terminal/> */}
